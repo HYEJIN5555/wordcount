@@ -1,0 +1,33 @@
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+<style>
+    @font-face { font-family: 'Goyang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Goyang.woff') format('woff'); font-weight: normal; font-style: normal; }
+    body {
+        font-family: 'Goyang';
+    }
+    h1, h5 {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h5>당신이 입력한 텍스트는 총 <strong><mark>{{total}}단어</mark></strong>로 구성되어 있습니다.</h5>
+            <a href="{% url 'home' %}" class="btn btn-sm btn-outline-dark" role="button">다시하기</a>
+            <br>
+            <br>
+            <h3>입력한 텍스트 :</h3>
+            {{full|linebreaks}}
+            
+            <br>
+            <h3>단어 카운트 :</h3>
+            {% for word, howmany in dictionary %}
+                {{word}} : {{howmany}}
+                <br>
+            {% endfor %}
+        </div>
+    </div>
+</body>

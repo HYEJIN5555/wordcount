@@ -1,0 +1,25 @@
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+<style>
+@font-face { font-family: 'Goyang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Goyang.woff') format('woff'); font-weight: normal; font-style: normal; }
+    body {
+        font-family: 'Goyang';
+    }
+</style>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 style="text-align: center"> 여기서 글자를 세세요. </h1>
+            <br><br>
+            <form action="{% url 'result' %}">
+            <textarea cols="100" rows="10" name="fulltext" class="form-control" placeholder="내용을 입력하세요."></textarea>
+            <br>
+            <input type="submit" class="btn" role="button" value="Count!">
+            </form>
+        </div>
+    </div>
+            
+</body>
